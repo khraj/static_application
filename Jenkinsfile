@@ -20,7 +20,7 @@ pipeline{
     stage ('Docker image build'){
       steps {
         sh '''
-        docker build -t DOCKER_IMAGE:IMAGE_TAG .
+        docker build -t ${DOCKER_IMAGE}:${IMAGE_TAG} .
         docker tag ${DOCKER_IMAGE}:${IMAGE_TAG} ${DOCKER_IMAGE}:latest
         echo "Docker Image was built successully"
         docker images | grep static-website
