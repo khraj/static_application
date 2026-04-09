@@ -50,7 +50,7 @@ pipeline{
         sh '''
         sleep 5
         docker ps | grep static-website
-        curl http://localhost:8092 | head 20
+        curl http://localhost:8092 | head -n 20
         '''
 
         echo "website is live"
