@@ -41,6 +41,8 @@ pipeline{
     stage('Spinning the docker container'){
       steps{
         sh '''
+        docker stop static-website 2>/dev/null || true
+        docker rm static-website 2>/dev/null || true
         docker run -d -p 8092:80 --name=static-website --restart=always ${DOCKER_IMAGE}:latest
         '''
       }
