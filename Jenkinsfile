@@ -31,7 +31,7 @@ pipeline{
     stage('Push to dockerhub'){
       steps {
         sh '''
-        echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
+        echo ${DOCKER_CREDS_PSW} | docker login -u ${DOCKER_CREDS_USR} --password-stdin
         docker push ${DOCKER_IMAGE}:${IMAGE_TAG}
         docker push ${DOCKER_IMAGE}:latest
         docker logout
