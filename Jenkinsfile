@@ -55,8 +55,9 @@ pipeline{
         echo "website is live"
       }
     }
+  }
 
-    post {
+  post {
         success {
             echo "========== PIPELINE SUCCESS =========="
             echo "✓ Deployment completed successfully"
@@ -64,9 +65,8 @@ pipeline{
         }
         failure {
             echo "========== PIPELINE FAILED =========="
-            echo "✗ Check logs above for errors"
+            echo "Check logs above for errors"
         }
     }
-  }
   
 }
