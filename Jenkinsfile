@@ -3,7 +3,7 @@ pipeline{
 
   environment {
     DOCKER_CREDS = credentials('docker-hub-credentials')
-    DOCKER_IMAGE = "static-website"
+    DOCKER_IMAGE = "${DOCKER_CREDS_USR}/static-website"
     IMAGE_TAG = "${BUILD_NUMBER}"
   }
   stages{
